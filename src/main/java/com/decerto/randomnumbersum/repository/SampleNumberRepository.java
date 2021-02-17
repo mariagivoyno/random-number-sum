@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SampleNumberRepository extends JpaRepository<SampleNumberEntity, Integer> {
 
+    long count();
+
 }

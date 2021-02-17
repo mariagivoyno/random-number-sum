@@ -12,11 +12,11 @@ public class RandomFromSQL implements RandomIntegerRepository {
     @Override
     public Integer getRandom() {
 
-        var sampleNumbers = sampleNumberRepository.findAll();
-        if (sampleNumbers.size() > 0)
-            return sampleNumbers.get(0).getValue();
-        else
-            return (int) (Integer.MAX_VALUE * Math.random());
+        var numberOfRecords = sampleNumberRepository.count();
+        var id = (int) (System.currentTimeMillis() % numberOfRecords + 1);
+        var selectedNumber = sampleNumberRepository.getOne(id);
+
+        return selectedNumber.getValue();
     }
 
 }
