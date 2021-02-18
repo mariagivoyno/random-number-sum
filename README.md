@@ -2,7 +2,8 @@
 
 ### Prerequisities for development ###
 
-Java 11 Maven
+* Java Development Kit 11
+* Maven
 
 ### Run the application by executing command
 
