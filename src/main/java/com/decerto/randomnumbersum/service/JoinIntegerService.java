@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class NumberAddingService implements DataAddingService<Integer> {
+public class JoinIntegerService implements JoinDataService<Integer> {
 
     @Autowired
     private List<RandomIntegerRepository> randomIntegerRepositories;
@@ -16,8 +16,8 @@ public class NumberAddingService implements DataAddingService<Integer> {
     @Override
     public Integer add() throws IOException, InterruptedException {
 
-        int sum = 0;
-        for (RandomIntegerRepository repository : randomIntegerRepositories) {
+        var sum = 0;
+        for (var repository : randomIntegerRepositories) {
             sum += repository.getRandom();
         }
         return sum;

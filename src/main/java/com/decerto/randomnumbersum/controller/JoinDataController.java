@@ -1,6 +1,6 @@
 package com.decerto.randomnumbersum.controller;
 
-import com.decerto.randomnumbersum.service.NumberAddingService;
+import com.decerto.randomnumbersum.service.JoinIntegerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,15 +10,15 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/random")
-public class NumberAddingController {
+public class JoinDataController {
 
     @Autowired
-    private NumberAddingService numberAddingService;
+    private JoinIntegerService joinIntegerService;
 
     @GetMapping("/add")
     public Integer add() throws IOException, InterruptedException {
 
-        return numberAddingService.add();
+        return joinIntegerService.add();
     }
 
 }
